@@ -1,0 +1,22 @@
+{
+  "eth": 1,
+  "bsc": 2,
+  "avax": 6,
+  "polygon": 9,
+  "arbitrum": 10,
+  "optimism": 11,
+
+  "rinkeby-testnet": 10001,
+  "bsctestnet-testnet": 10002,
+  "fuji-testnet": 10006,
+  "mumbai-testnet": 10009,
+  "arbrink-testnet": 10010,
+  "optkov-testnet": 10011,
+
+  "rinkeby-sandbox": 20001,
+  "bsctestnet-sandbox": 20002,
+  "fuji-sandbox": 20006,
+  "mumbai-sandbox": 20009,
+  "arbrink-sandbox": 20010,
+  "optkov-sandbox": 20011
+}

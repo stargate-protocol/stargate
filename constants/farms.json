@@ -1,0 +1,103 @@
+{
+  "ethereum": {
+    "1": {
+      "weight": 63
+    },
+    "2":{
+      "weight": 38
+    }
+  },
+  "bsc": {
+    "2": {
+      "weight": 40
+    },
+    "5":{
+      "weight": 60
+    }
+  },
+  "avalanche": {
+    "1": {
+      "weight": 65
+    },
+    "2":{
+      "weight": 35
+    }
+  },
+  "polygon": {
+    "1": {
+      "weight": 65
+    },
+    "2":{
+      "weight": 35
+    }
+  },
+  "arbitrum": {
+    "1": {
+      "weight": 65
+    },
+    "2":{
+      "weight": 35
+    }
+  },
+  "optimism": {
+    "1": {
+      "weight": 1
+    }
+  },
+  "fantom": {
+    "1": {
+      "weight": 1
+    }
+  },
+
+  "rinkeby": {
+    "1": {
+      "weight": 63
+    },
+    "2":{
+      "weight": 38
+    }
+  },
+  "bsc-testnet": {
+    "2": {
+      "weight": 40
+    },
+    "5":{
+      "weight": 60
+    }
+  },
+  "fuji": {
+    "1": {
+      "weight": 65
+    },
+    "2":{
+      "weight": 35
+    }
+  },
+  "mumbai": {
+    "1": {
+      "weight": 65
+    },
+    "2":{
+      "weight": 35
+    }
+  },
+  "arbitrum-rinkeby": {
+    "1": {
+      "weight": 65
+    },
+    "2":{
+      "weight": 35
+    }
+  },
+  "optimism-kovan": {
+    "1": {
+      "weight": 1
+    }
+  },
+  "fantom-testnet": {
+    "1": {
+      "weight": 1
+    }
+  }
+}

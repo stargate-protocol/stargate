@@ -1,6 +1,6 @@
 const { getDeploymentAddresses } = require("../utils/readDeployments")
 const { getEndpointId } = require("../utils/network")
-const { getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 
 task("wireStargateTokens", "connect the local stargate to a remote stargate by configuring the remote bridge")
     .addParam("targetNetworks", "the remote Stargate instance named by network")

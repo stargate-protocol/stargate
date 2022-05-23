@@ -1,4 +1,4 @@
-const { CHAIN_ID } = require("@layerzerolabs/core-sdk")
+const { CHAIN_ID } = require("@layerzerolabs/lz-sdk")
 
 task("sendCredits", "sendCredits function from stargate to destination chainId")
     .addParam("poolId", "the poolId")

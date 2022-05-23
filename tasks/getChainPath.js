@@ -1,5 +1,5 @@
-const { ChainId } = require("@layerzerolabs/core-sdk")
-const { PoolId } = require("@layerzerolabs/stargate-sdk")
+const { ChainId } = require("@layerzerolabs/lz-sdk")
+const { PoolId } = require("@layerzerolabs/sg-sdk")
 
 task("getChainPath", "get chain path from the chainpaths map")
     .addParam("poolId", "the poolId")

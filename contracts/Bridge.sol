@@ -8,13 +8,12 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "./Pool.sol";
 import "./Router.sol";
-// interfaces
-import "@layerzerolabs/contracts/contracts/interfaces/ILayerZeroReceiver.sol";
-import "@layerzerolabs/contracts/contracts/interfaces/ILayerZeroEndpoint.sol";
-import "@layerzerolabs/contracts/contracts/interfaces/ILayerZeroUserApplicationConfig.sol";
 
 // libraries
 import "@openzeppelin/contracts/math/SafeMath.sol";
+import "./interfaces/ILayerZeroReceiver.sol";
+import "./interfaces/ILayerZeroEndpoint.sol";
+import "./interfaces/ILayerZeroUserApplicationConfig.sol";
 
 contract Bridge is Ownable, ILayerZeroReceiver, ILayerZeroUserApplicationConfig {
     using SafeMath for uint256;

@@ -1,5 +1,5 @@
-const { CHAIN_ID } = require("@layerzerolabs/core-sdk")
-const { POOLS } = require("@layerzerolabs/stargate-sdk")
+const { CHAIN_ID } = require("@layerzerolabs/lz-sdk")
+const { POOLS } = require("@layerzerolabs/sg-sdk")
 
 task("sendCreditsAll", "sendCredits to each outgoing configured chainPath").setAction(async (taskArgs) => {
     const signers = await ethers.getSigners()

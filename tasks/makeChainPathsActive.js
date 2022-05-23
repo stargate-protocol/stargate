@@ -1,4 +1,4 @@
-const { getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 
 task("makeChainPathsActive", "activate the chainPaths for a pool")
     .addParam("poolId", "the pool id to create chain paths for")

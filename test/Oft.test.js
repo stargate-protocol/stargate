@@ -224,7 +224,7 @@ describe("Oft:", function () {
 
     it("estimateSendTokensFee()", async function () {
         // 42 is the arbitrary dummy return value in our mocks
-        expect((await oft[0].estimateSendTokensFee(1, false, "0x"))[0]).to.equal(42)
+        expect((await oft[0].estimateSendTokensFee(1, "0x", false, "0x"))[0]).to.equal(42)
     })
 
     it("setSendVersion()", async function () {

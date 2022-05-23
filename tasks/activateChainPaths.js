@@ -1,6 +1,6 @@
-const { POOLS } = require("@layerzerolabs/stargate-sdk")
+const { POOLS } = require("@layerzerolabs/sg-sdk")
 const { getEndpointId } = require("../utils/network")
-const { getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 
 task("activateChainPaths", "activate chain paths")
     .addParam("targetNetwork", "activate chain paths for this destination targetNetwork")

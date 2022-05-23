@@ -1,4 +1,4 @@
-const { CHAIN_ID } = require("@layerzerolabs/core-sdk")
+const { CHAIN_ID } = require("@layerzerolabs/lz-sdk")
 
 task("sendStargateTokens", "send StargateTokens cross chain")
     .addParam("targetNetwork", "the destination StargateToken chain id")

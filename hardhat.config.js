@@ -13,20 +13,9 @@ require("hardhat-deploy");
 require("hardhat-deploy-ethers");
 require("hardhat-spdx-license-identifier");
 
-const { ChainId, setupNetwork } = require('@layerzerolabs/core-sdk')
-
 // const infuraProjectId = process.env.INFURA_PROJECT_ID;
 // console.log(`infuraProjectId: ${infuraProjectId}`);
 
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
-    const accounts = await hre.ethers.getSigners();
-
-    for (const account of accounts) {
-        console.log(account.address);
-    }
-});
 
 // custom helper tasks
 require("./tasks/addLiquidity");
@@ -54,7 +43,28 @@ require("./tasks/getFeeVersion")
 require("./tasks")
 
 // You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
+// Go to https://hardhat.org/config/ to learn more4
+
+
+function getMnemonic(networkName) {
+    if (networkName) {
+        const mnemonic = process.env['MNEMONIC_' + networkName.toUpperCase()]
+        if (mnemonic && mnemonic !== '') {
+            return mnemonic
+        }
+    }
+
+    const mnemonic = process.env.MNEMONIC
+    if (!mnemonic || mnemonic === '') {
+        return 'test test test test test test test test test test test junk'
+    }
+
+    return mnemonic
+}
+
+function accounts(chainKey) {
+    return { mnemonic: getMnemonic(chainKey) }
+}
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -84,81 +94,53 @@ module.exports = {
     defaultNetwork: "hardhat",
 
     networks: {
-        hardhat: {
-            initialBaseFeePerGas: 0, // workaround from https://github.com/sc-forks/solidity-coverage/issues/652#issuecomment-896330136 . Remove when that issue is closed.
+        ethereum: {
+            url: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
+            chainId: 1,
+            accounts: accounts(),
         },
 
-        //////////////////////// mainnets
-        ...setupNetwork({
-            // eth mainnet
-            eth: {
-                url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_MAINNET_ETH_API_KEY}`,
-            } }, [ChainId.ETHEREUM]),
-        ...setupNetwork({
-            // bsc mainnet
-            bsc: {
-                url: `https://speedy-nodes-nyc.moralis.io/${process.env.MORALIS_MAINNET_BSC_API_KEY}`,
-            } }, [ChainId.BSC]),
-        ...setupNetwork({
-            // avax mainnet
-            avax: {
-                url: `https://speedy-nodes-nyc.moralis.io/${process.env.MORALIS_MAINNET_AVAX_API_KEY}`,
-            } }, [ChainId.AVALANCHE]),
-        ...setupNetwork({
-            // polygon mainnet
-            polygon: {
-                url: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_POLYGON_API_KEY}`,
-            } }, [ChainId.POLYGON]),
-        ...setupNetwork({
-            // arbitrum mainnet
-            arbitrum: {
-                url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_ARBITRUM_API_KEY}`,
-            } }, [ChainId.ARBITRUM]),
-        ...setupNetwork({
-            // optimism mainnet
-            optimism: {
-                url: `https://opt-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_OPTIMISM_API_KEY}`,
-            } }, [ChainId.OPTIMISM]),
-        ...setupNetwork({
-            // ftm mainnet
-            ftm: {
-                url: `https://speedy-nodes-nyc.moralis.io/${process.env.MORALIS_MAINNET_FTM_API_KEY}`,
-            } }, [ChainId.FANTOM]),
-        ...setupNetwork({
-            rinkeby: {
-                url: `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`
-            }
-        }, [ChainId.RINKEBY, ChainId.RINKEBY_SANDBOX]),
-        ...setupNetwork({
-            "bsc-testnet": {
-                url: `${process.env.BSC_TESTNET_RPC}` // "https://data-seed-prebsc-2-s3.binance.org:8545"
-            }
-        }, [ChainId.BSC_TESTNET, ChainId.BSC_TESTNET_SANDBOX]),
-        ...setupNetwork({
-            fuji: {
-                url: `${process.env.FUJI_RPC}`
-            }
-        }, [ChainId.FUJI, ChainId.FUJI_SANDBOX]),
-        ...setupNetwork({
-            mumbai: {
-                url: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.ALCHEMY_MUMBAI_API_KEY}` // "https://rpc-mumbai.maticvigil.com/",
-            }
-        }, [ChainId.MUMBAI, ChainId.MUMBAI_SANDBOX]),
-        ...setupNetwork({
-            arbrink: {
-                url: `https://arb-rinkeby.g.alchemy.com/v2/${process.env.ALCHEMY_ARBRINK_API_KEY}`
-            }
-        }, [ChainId.ARBITRUM_RINKEBY, ChainId.ARBITRUM_RINKEBY_SANDBOX]),
-        ...setupNetwork({
-            optkov: {
-                url: `https://opt-kovan.g.alchemy.com/v2/${process.env.ALCHEMY_OPTKOV_API_KEY}` // `https://optimism-kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
-            }
-        }, [ChainId.OPTIMISM_KOVAN, ChainId.OPTIMISM_KOVAN_SANDBOX]),
-        ...setupNetwork({
-            "ftm-testnet": {
-                url: `${process.env.FTM_TESTNET_RPC}`
-            }
-        }, [ChainId.FANTOM_TESTNET, ChainId.FANTOM_TESTNET_SANDBOX]),
+        avalanche: {
+            url: "https://api.avax.network/ext/bc/C/rpc",
+            chainId: 43114,
+            accounts: accounts(),
+        },
+
+        rinkeby: {
+            url: "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
+            chainId: 4,
+            accounts: accounts(),
+        },
+        'bsc-testnet': {
+            url: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+            chainId: 97,
+            accounts: accounts(),
+        },
+        fuji: {
+            url: `https://api.avax-test.network/ext/bc/C/rpc`,
+            chainId: 43113,
+            accounts: accounts(),
+        },
+        mumbai: {
+            url: "https://rpc-mumbai.maticvigil.com/",
+            chainId: 80001,
+            accounts: accounts(),
+        },
+        'arbitrum-rinkeby': {
+            url: `https://rinkeby.arbitrum.io/rpc`,
+            chainId: 421611,
+            accounts: accounts(),
+        },
+        'optimism-kovan': {
+            url: `https://kovan.optimism.io/`,
+            chainId: 69,
+            accounts: accounts(),
+        },
+        'fantom-testnet': {
+            url: `https://rpc.testnet.fantom.network/`,
+            chainId: 4002,
+            accounts: accounts(),
+        }
     },
     mocha: {
         timeout: 500000,

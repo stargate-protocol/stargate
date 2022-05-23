@@ -69,9 +69,8 @@
     "solidity-coverage": "^0.7.17"
   },
   "dependencies": {
-    "@layerzerolabs/core-sdk": "1.0.34-beta.74",
-    "@layerzerolabs/stargate-sdk": "1.0.22-beta.77",
-    "@layerzerolabs/contracts": "1.0.50",
+    "@layerzerolabs/lz-sdk": "^0.0.2",
+    "@layerzerolabs/sg-sdk": "^0.0.7",
     "@primitivefi/hardhat-dodoc": "^0.1.3",
     "abi-decoder": "^2.4.0",
     "ethereumjs-util": "^7.1.4",

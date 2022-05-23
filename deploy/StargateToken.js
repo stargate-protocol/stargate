@@ -1,7 +1,7 @@
 const { getLayerZeroAddress } = require("../utils/layerzero")
 const CONFIG = require("../constants/config.json")
 const { isTestnet, isLocalhost } = require("../utils/network")
-const { getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 
 function getDependencies() {
     if (hre.network.name === "hardhat") {

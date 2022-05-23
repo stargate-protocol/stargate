@@ -1,5 +1,5 @@
-const { ChainId } = require("@layerzerolabs/core-sdk")
-const { PoolId } = require("@layerzerolabs/stargate-sdk")
+const { ChainId } = require("@layerzerolabs/lz-sdk")
+const { PoolId } = require("@layerzerolabs/sg-sdk")
 
 task("getFeeVersion", "Get fee library version").setAction(async (taskArgs) => {
     let accounts = await ethers.getSigners()

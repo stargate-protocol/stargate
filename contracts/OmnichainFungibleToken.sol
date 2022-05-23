@@ -4,11 +4,9 @@ pragma solidity 0.7.6;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-
-import "@layerzerolabs/contracts/contracts/interfaces/ILayerZeroEndpoint.sol";
-import "@layerzerolabs/contracts/contracts/interfaces/ILayerZeroReceiver.sol";
-import "@layerzerolabs/contracts/contracts/interfaces/ILayerZeroUserApplicationConfig.sol";
-
+import "./interfaces/ILayerZeroReceiver.sol";
+import "./interfaces/ILayerZeroEndpoint.sol";
+import "./interfaces/ILayerZeroUserApplicationConfig.sol";
 
 //---------------------------------------------------------------------------
 // THIS CONTRACT IS OF BUSINESS LICENSE. CONTACT US BEFORE YOU USE IT.

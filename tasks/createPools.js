@@ -1,4 +1,4 @@
-const { POOLS } = require("@layerzerolabs/stargate-sdk")
+const { POOLS } = require("@layerzerolabs/sg-sdk")
 const { getEndpointId } = require("../utils/network")
 
 task("createPools", "create the pools for the network").setAction(async (taskArgs) => {

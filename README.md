@@ -1,6 +1,6 @@
 # Stargate - Composable Native Asset Bridge
 
-Stargate is a **composable** native asset bridge with **unified liquidity**  and **instant guaranteed finality**  built on top of the LayerZero protocol. The repository contains the smart contracts of the core protocol for stargate.
+Stargate is a **composable** native asset bridge with **unified liquidity**  and **instant guaranteed finality**  built on top of the LayerZero protocol. The repository contains the smart contracts of the core protocol for Stargate.
 
 
 ### Setup
@@ -14,7 +14,7 @@ Stargate is a **composable** native asset bridge with **unified liquidity**  and
 
 ### Acknowledgements 
 
-Thank you to the core development team for helping build the Stargate smart contracts : Ryan Zarick, Isaac Zhang, Caleb Banister, Carmen Cheng and T. Riley Schwarz
+Thank you to the core development team for helping build the Stargate smart contracts: Ryan Zarick, Isaac Zhang, Caleb Banister, Carmen Cheng and T. Riley Schwarz
 
 ### LICENSING
 

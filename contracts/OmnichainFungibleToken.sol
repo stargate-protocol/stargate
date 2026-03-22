@@ -104,7 +104,7 @@ contract OmnichainFungibleToken is ERC20, Ownable, ILayerZeroReceiver, ILayerZer
         assembly { toAddress := mload(add(_to, 20)) }
 
         // if the toAddress is 0x0, burn it
-        if (toAddress == address(0x0)) toAddress == address(0xdEaD);
+        if (toAddress == address(0x0)) toAddress = address(0xdEaD);
 
         // on the main chain unlock via transfer, otherwise _mint
         if (isMain) {
